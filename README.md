@@ -1,7 +1,7 @@
 # glfw
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/pekim/glfw.svg)](https://pkg.go.dev/github.com/pekim/glfw)
-[![golangci-lint](https://github.com/pekim/glfw/actions/workflows/verify.yml/badge.svg)](https://github.com/pekim/glfw/actions/workflows/verify.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/pekim/go-glfw.svg)](https://pkg.go.dev/github.com/pekim/go-glfw)
+[![golangci-lint](https://github.com/pekim/go-glfw/actions/workflows/verify.yml/badge.svg)](https://github.com/pekim/go-glfw/actions/workflows/verify.yml)
 
 Bindings for glfw, without any use of cgo.
 
