@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: install x11
-        run: sudo apt install -y libx11-dev libxcursor-dev libxrandr-dev libgl-dev libxinerama-dev libxi-dev
+      - name: install dependencies
+        run: sudo apt install -y libgl-dev
 
       - uses: actions/setup-go@v6
         with:
@@ -46,6 +46,9 @@ jobs:
       - name: install clang
         if: ${{ runner.os == 'macOS' }}
         run: brew install llvm # required so that libomp.dylib is available
+
+      - name: install dependencies
+        run: sudo apt install -y libgl-dev
 
       - uses: actions/checkout@v6
 
