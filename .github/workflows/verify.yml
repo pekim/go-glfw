@@ -43,12 +43,12 @@ jobs:
           #   runner: macos-15
 
     steps:
-      - name: install clang
-        if: ${{ runner.os == 'macOS' }}
-        run: brew install llvm # required so that libomp.dylib is available
+      # - name: install clang
+      #   if: ${{ runner.os == 'macOS' }}
+      #   run: brew install llvm # required so that libomp.dylib is available
 
       - name: install dependencies
-        run: sudo apt install -y libglfw3-dev libx11-dev libxcursor-dev libxrandr-dev libgl-dev libxinerama-dev libxi-dev
+        run: sudo apt install -y libglfw3-dev libx11-dev libxcursor-dev libxrandr-dev libgl-dev libxinerama-dev libxi-dev xvfb
 
       - uses: actions/checkout@v6
 
