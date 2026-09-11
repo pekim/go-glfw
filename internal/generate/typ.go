@@ -71,18 +71,19 @@ var scalars = map[clang.CursorKind]scalar{
 }
 
 type typ struct {
-	typ        clang.Type
-	isArray    bool
-	isCallback bool
-	isPointer  bool
-	isScalar   bool
-	isString   bool
-	isStruct   bool
-	isVoid     bool
-	arraySize  int
-	callback   *callback
-	scalar     scalar
-	struct_    *struct_
+	typ             clang.Type
+	isArray         bool
+	isCallback      bool
+	isPointer       bool
+	isScalar        bool
+	isString        bool
+	isStringPointer bool
+	isStruct        bool
+	isVoid          bool
+	arraySize       int
+	callback        *callback
+	scalar          scalar
+	struct_         *struct_
 }
 
 func newTyp(gen *gen, typ_ clang.Type) typ {
@@ -112,6 +113,11 @@ func newTyp(gen *gen, typ_ clang.Type) typ {
 		typ.scalar, typ.isScalar = scalars[clang.CursorKind(pointeeKind)]
 		typ.isString = pointeeKind == clang.Type_Char_S || pointeeKind == clang.Type_UChar
 		typ.isVoid = pointeeKind == clang.Type_Void
+
+		if pointeeKind == clang.Type_Pointer {
+			pointeePointeeKind := pointeeType.PointeeType().CanonicalType().Kind()
+			typ.isStringPointer = pointeePointeeKind == clang.Type_Char_S || pointeePointeeKind == clang.Type_UChar
+		}
 	}
 
 	typ.isArray = typ.typ.Kind() == clang.Type_ConstantArray
@@ -132,6 +138,8 @@ func (typ typ) cDecl() jen.Code {
 		return typ.scalar.cType
 	} else if typ.isString {
 		return jen.Op("*").Byte()
+	} else if typ.isStringPointer {
+		return jen.Op("**").Byte()
 	}
 
 	return typ.goDecl()

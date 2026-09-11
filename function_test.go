@@ -11,7 +11,10 @@ import (
 func testInit(t *testing.T) {
 	t.Helper()
 	assert.NoError(t, Initialise())
-	assert.NotZero(t, Init())
+	if Init() != TRUE {
+		errMessage, err := GetError()
+		assert.Fail(t, "Init failed", "%d : %q", err, errMessage)
+	}
 }
 
 func TestVersion(t *testing.T) {

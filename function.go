@@ -341,7 +341,62 @@ func GetVersionString() string {
 	return goString(result)
 }
 
-// UNSUPPORTED glfwGetError : param description is "const char **"
+/*
+This function returns and clears the [error code] of the last
+error that occurred on the calling thread, and optionally a UTF-8 encoded
+human-readable description of it.  If no error has occurred since the last
+call, it returns [NO_ERROR] (zero) and the description pointer is
+set to `NULL`.
+
+C documentation : [glfwGetError]
+
+# params
+  - description - Where to store the error description pointer, or `NULL`.
+
+# return
+
+The last error code for the calling thread, or [NO_ERROR]
+(zero).
+
+# errors
+
+None.
+
+# pointer lifetime
+
+The returned string is allocated and freed by GLFW.  You
+should not free it yourself.  It is guaranteed to be valid only until the
+next error occurs or the library is terminated.
+
+This function may be called before [Init].
+
+# thread safety
+
+This function may be called from any thread.
+
+# since
+
+Added in version 3.3.
+
+[error code]: https://www.glfw.org/docs/latest/group__errors.html
+[glfwGetError]: https://www.glfw.org/docs/latest/group__init.html#ga944986b4ec0b928d488141f92982aa18
+*/
+func GetError() (string, Int) {
+	var result Int
+	var description *byte
+	_, err := ffi.CallFunction(
+		cif_glfwGetError,
+		func_glfwGetError,
+		unsafe.Pointer(&result),
+		[]unsafe.Pointer{
+			unsafe.Pointer(new(&description)),
+		},
+	)
+	if err != nil {
+		panic(err)
+	}
+	return goString(description), result
+}
 
 /*
 This function sets the error callback, which is called with an error code

@@ -27,6 +27,9 @@ var cif_glfwGetVersion = &types.CallInterface{}
 var func_glfwGetVersionString unsafe.Pointer
 var cif_glfwGetVersionString = &types.CallInterface{}
 
+var func_glfwGetError unsafe.Pointer
+var cif_glfwGetError = &types.CallInterface{}
+
 var func_glfwSetErrorCallback unsafe.Pointer
 var cif_glfwSetErrorCallback = &types.CallInterface{}
 
@@ -474,6 +477,23 @@ func Initialise() error {
 			types.DefaultCall,
 			types.PointerTypeDescriptor,
 			[]*types.TypeDescriptor{})
+		if err != nil {
+			return err
+		}
+	}
+
+	if major >= 3 && minor >= 3 {
+		func_glfwGetError, err = ffi.GetSymbol(handle, "glfwGetError")
+		if err != nil {
+			return err
+		}
+		err = ffi.PrepareCallInterface(
+			cif_glfwGetError,
+			types.DefaultCall,
+			types.SInt32TypeDescriptor,
+			[]*types.TypeDescriptor{
+				types.PointerTypeDescriptor,
+			})
 		if err != nil {
 			return err
 		}

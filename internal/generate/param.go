@@ -25,6 +25,9 @@ func newParam(gen *gen, cursor clang.Cursor, commentParams commentParams) param 
 	if commentParam, ok := commentParams[param.name]; ok {
 		param.direction = commentParam.direction
 	}
+	if param.isStringPointer {
+		param.direction = out
+	}
 
 	return param
 }
@@ -39,7 +42,7 @@ func (param param) supported() (bool, string) {
 	if param.isStruct && param.isPointer {
 		return true, ""
 	}
-	if param.isString {
+	if param.isString || param.isStringPointer {
 		return true, ""
 	}
 	if param.isPointer && param.isVoid {
@@ -73,6 +76,9 @@ func (param param) outGoDecl() jen.Code {
 	if param.isScalar {
 		return param.scalar.goType
 	}
+	if param.isStringPointer {
+		return jen.String()
+	}
 	if param.isStruct {
 		return jen.Id(param.struct_.name)
 	}
@@ -90,9 +96,12 @@ func (param param) cArgVar(g *jen.Group) {
 	} else if param.direction == out {
 		if param.isScalar {
 			g.Var().Id(param.name).Add(param.scalar.goType)
-		}
-		if param.isStruct {
+		} else if param.isStringPointer {
+			g.Var().Id(param.name).Op("*").Byte()
+		} else if param.isStruct {
 			g.Var().Id(param.name).Id(param.struct_.name)
+		} else {
+			panic(fmt.Sprintf("out param %s type is unhandled : %s", param.name, param.typ.typ.Spelling()))
 		}
 	}
 }
@@ -190,7 +199,11 @@ func (params params) haveOut() bool {
 func (params params) returnValues(g *jen.Group) {
 	for _, param := range params {
 		if param.direction == out && !param.isCount() {
-			g.Id(param.name)
+			if param.isStringPointer {
+				g.Id("goString").Call(jen.Id(param.name))
+			} else {
+				g.Id(param.name)
+			}
 		}
 	}
 }
