@@ -58,3 +58,5 @@ jobs:
 
       - name: test
         run: go test -v github.com/pekim/go-glfw/...
+        env:
+          DISPLAY: ":0"
