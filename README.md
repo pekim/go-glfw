@@ -1,5 +1,16 @@
 # glfw
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/pekim/glfw.svg)](https://pkg.go.dev/github.com/pekim/glfw)
+[![golangci-lint](https://github.com/pekim/glfw/actions/workflows/verify.yml/badge.svg)](https://github.com/pekim/glfw/actions/workflows/verify.yml)
+
+Bindings for glfw, without any use of cgo.
+
+## status
+
+This library is experimental.
+It appears to broadly work (at least on linux),
+but it has not been extensively tested.
+
 ## AI
 
 No AI was used in the creation of this library.
