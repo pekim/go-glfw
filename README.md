@@ -15,6 +15,15 @@ but it has not been extensively tested.
 
 No AI was used in the creation of this library.
 
+## history
+
+The initial commit adds a lot of files, consituting a working library.
+The original development was done in another (non-public) repo, which
+also included (half-baked) gl bindings.
+The glfw bindings have now been split off into this repo.
+A lot of the commits in the original repo contained both gl and glfw changes,
+making it impractical to bring the early development history in to this repo.
+
 ## Development
 
 ### generate
