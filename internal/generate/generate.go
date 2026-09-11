@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/go-clang/clang-v15/clang"
-	"github.com/pekim/glfw/internal/tagfile"
+	"github.com/pekim/go-glfw/internal/tagfile"
 )
 
 type gen struct {

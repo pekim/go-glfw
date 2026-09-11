@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/pekim/glfw"
+	"github.com/pekim/go-glfw"
 )
 
 func init() {

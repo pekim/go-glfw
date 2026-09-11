@@ -2,7 +2,7 @@
 
 package structtest
 
-import glfw "github.com/pekim/glfw"
+import goglfw "github.com/pekim/go-glfw"
 
 // #include "../generate/glfw3.h"
 import "C"
@@ -14,35 +14,35 @@ var structs = []struct {
 }{
 	{
 		c:    C.GLFWmonitor{},
-		go_:  glfw.Monitor{},
+		go_:  goglfw.Monitor{},
 		name: "GLFWmonitor",
 	}, {
 		c:    C.GLFWwindow{},
-		go_:  glfw.Window{},
+		go_:  goglfw.Window{},
 		name: "GLFWwindow",
 	}, {
 		c:    C.GLFWcursor{},
-		go_:  glfw.Cursor{},
+		go_:  goglfw.Cursor{},
 		name: "GLFWcursor",
 	}, {
 		c:    C.GLFWvidmode{},
-		go_:  glfw.Vidmode{},
+		go_:  goglfw.Vidmode{},
 		name: "GLFWvidmode",
 	}, {
 		c:    C.GLFWgammaramp{},
-		go_:  glfw.Gammaramp{},
+		go_:  goglfw.Gammaramp{},
 		name: "GLFWgammaramp",
 	}, {
 		c:    C.GLFWimage{},
-		go_:  glfw.Image{},
+		go_:  goglfw.Image{},
 		name: "GLFWimage",
 	}, {
 		c:    C.GLFWgamepadstate{},
-		go_:  glfw.Gamepadstate{},
+		go_:  goglfw.Gamepadstate{},
 		name: "GLFWgamepadstate",
 	}, {
 		c:    C.GLFWallocator{},
-		go_:  glfw.Allocator{},
+		go_:  goglfw.Allocator{},
 		name: "GLFWallocator",
 	},
 }

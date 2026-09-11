@@ -28,7 +28,7 @@ func (gen gen) generateStructTest() {
 					Values(jen.DictFunc(func(d jen.Dict) {
 						d[jen.Id("name")] = jen.Lit(struct_.cName)
 						d[jen.Id("c")] = jen.Qual("C", struct_.cName).Block()
-						d[jen.Id("go_")] = jen.Qual("github.com/pekim/glfw", struct_.name).Block()
+						d[jen.Id("go_")] = jen.Qual("github.com/pekim/go-glfw", struct_.name).Block()
 					}))
 			}
 			g.Line()

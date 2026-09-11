@@ -1,4 +1,4 @@
-module github.com/pekim/glfw
+module github.com/pekim/go-glfw
 
 go 1.26.0
 
