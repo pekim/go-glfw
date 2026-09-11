@@ -1,0 +1,57 @@
+name: verify
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: install x11
+        run: sudo apt install -y libx11-dev libxcursor-dev libxrandr-dev libgl-dev libxinerama-dev libxi-dev
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.26"
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v9
+        with:
+          version: v2.6.2
+          verify: false
+
+  test:
+    name: ${{ matrix.platform.name }}
+    runs-on: ${{ matrix.platform.runner }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: linux/amd64
+            runner: ubuntu-24.04
+          # - name: linux/arm64
+          #   runner: ubuntu-24.04-arm
+          # - name: macos/amd64
+          #   runner: macos-15-intel
+          # - name: macos/arm64
+          #   runner: macos-15
+
+    steps:
+      - name: install clang
+        if: ${{ runner.os == 'macOS' }}
+        run: brew install llvm # required so that libomp.dylib is available
+
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "1.25"
+
+      - name: test
+        run: go test -v github.com/pekim/go-glfw/...
