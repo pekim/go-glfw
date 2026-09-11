@@ -399,7 +399,7 @@ func Initialise() error {
 
 	major, minor, _ := GetVersion()
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwInit, err = ffi.GetSymbol(handle, "glfwInit")
 		if err != nil {
 			return err
@@ -414,7 +414,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwTerminate, err = ffi.GetSymbol(handle, "glfwTerminate")
 		if err != nil {
 			return err
@@ -447,7 +447,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 4 {
 		func_glfwInitAllocator, err = ffi.GetSymbol(handle, "glfwInitAllocator")
 		if err != nil {
 			return err
@@ -464,7 +464,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetVersionString, err = ffi.GetSymbol(handle, "glfwGetVersionString")
 		if err != nil {
 			return err
@@ -479,7 +479,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetErrorCallback, err = ffi.GetSymbol(handle, "glfwSetErrorCallback")
 		if err != nil {
 			return err
@@ -496,7 +496,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 4 {
 		func_glfwGetPlatform, err = ffi.GetSymbol(handle, "glfwGetPlatform")
 		if err != nil {
 			return err
@@ -511,7 +511,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 4 {
 		func_glfwPlatformSupported, err = ffi.GetSymbol(handle, "glfwPlatformSupported")
 		if err != nil {
 			return err
@@ -528,7 +528,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetPrimaryMonitor, err = ffi.GetSymbol(handle, "glfwGetPrimaryMonitor")
 		if err != nil {
 			return err
@@ -543,7 +543,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetMonitorPos, err = ffi.GetSymbol(handle, "glfwGetMonitorPos")
 		if err != nil {
 			return err
@@ -583,7 +583,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetMonitorPhysicalSize, err = ffi.GetSymbol(handle, "glfwGetMonitorPhysicalSize")
 		if err != nil {
 			return err
@@ -621,7 +621,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetMonitorName, err = ffi.GetSymbol(handle, "glfwGetMonitorName")
 		if err != nil {
 			return err
@@ -673,7 +673,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetMonitorCallback, err = ffi.GetSymbol(handle, "glfwSetMonitorCallback")
 		if err != nil {
 			return err
@@ -690,7 +690,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetVideoMode, err = ffi.GetSymbol(handle, "glfwGetVideoMode")
 		if err != nil {
 			return err
@@ -707,7 +707,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetGamma, err = ffi.GetSymbol(handle, "glfwSetGamma")
 		if err != nil {
 			return err
@@ -725,7 +725,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetGammaRamp, err = ffi.GetSymbol(handle, "glfwGetGammaRamp")
 		if err != nil {
 			return err
@@ -742,7 +742,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetGammaRamp, err = ffi.GetSymbol(handle, "glfwSetGammaRamp")
 		if err != nil {
 			return err
@@ -760,7 +760,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwDefaultWindowHints, err = ffi.GetSymbol(handle, "glfwDefaultWindowHints")
 		if err != nil {
 			return err
@@ -775,7 +775,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwWindowHint, err = ffi.GetSymbol(handle, "glfwWindowHint")
 		if err != nil {
 			return err
@@ -811,7 +811,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwCreateWindow, err = ffi.GetSymbol(handle, "glfwCreateWindow")
 		if err != nil {
 			return err
@@ -832,7 +832,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwDestroyWindow, err = ffi.GetSymbol(handle, "glfwDestroyWindow")
 		if err != nil {
 			return err
@@ -849,7 +849,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwWindowShouldClose, err = ffi.GetSymbol(handle, "glfwWindowShouldClose")
 		if err != nil {
 			return err
@@ -866,7 +866,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetWindowShouldClose, err = ffi.GetSymbol(handle, "glfwSetWindowShouldClose")
 		if err != nil {
 			return err
@@ -884,7 +884,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 4 {
 		func_glfwGetWindowTitle, err = ffi.GetSymbol(handle, "glfwGetWindowTitle")
 		if err != nil {
 			return err
@@ -901,7 +901,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSetWindowTitle, err = ffi.GetSymbol(handle, "glfwSetWindowTitle")
 		if err != nil {
 			return err
@@ -919,7 +919,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwSetWindowIcon, err = ffi.GetSymbol(handle, "glfwSetWindowIcon")
 		if err != nil {
 			return err
@@ -938,7 +938,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetWindowPos, err = ffi.GetSymbol(handle, "glfwGetWindowPos")
 		if err != nil {
 			return err
@@ -957,7 +957,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSetWindowPos, err = ffi.GetSymbol(handle, "glfwSetWindowPos")
 		if err != nil {
 			return err
@@ -976,7 +976,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwGetWindowSize, err = ffi.GetSymbol(handle, "glfwGetWindowSize")
 		if err != nil {
 			return err
@@ -995,7 +995,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwSetWindowSizeLimits, err = ffi.GetSymbol(handle, "glfwSetWindowSizeLimits")
 		if err != nil {
 			return err
@@ -1016,7 +1016,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwSetWindowAspectRatio, err = ffi.GetSymbol(handle, "glfwSetWindowAspectRatio")
 		if err != nil {
 			return err
@@ -1035,7 +1035,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSetWindowSize, err = ffi.GetSymbol(handle, "glfwSetWindowSize")
 		if err != nil {
 			return err
@@ -1054,7 +1054,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetFramebufferSize, err = ffi.GetSymbol(handle, "glfwGetFramebufferSize")
 		if err != nil {
 			return err
@@ -1073,7 +1073,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwGetWindowFrameSize, err = ffi.GetSymbol(handle, "glfwGetWindowFrameSize")
 		if err != nil {
 			return err
@@ -1148,7 +1148,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 2 && minor >= 2 {
+	if major >= 2 && minor >= 1 {
 		func_glfwIconifyWindow, err = ffi.GetSymbol(handle, "glfwIconifyWindow")
 		if err != nil {
 			return err
@@ -1165,7 +1165,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 2 && minor >= 2 {
+	if major >= 2 && minor >= 1 {
 		func_glfwRestoreWindow, err = ffi.GetSymbol(handle, "glfwRestoreWindow")
 		if err != nil {
 			return err
@@ -1182,7 +1182,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwMaximizeWindow, err = ffi.GetSymbol(handle, "glfwMaximizeWindow")
 		if err != nil {
 			return err
@@ -1199,7 +1199,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwShowWindow, err = ffi.GetSymbol(handle, "glfwShowWindow")
 		if err != nil {
 			return err
@@ -1216,7 +1216,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwHideWindow, err = ffi.GetSymbol(handle, "glfwHideWindow")
 		if err != nil {
 			return err
@@ -1233,7 +1233,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwFocusWindow, err = ffi.GetSymbol(handle, "glfwFocusWindow")
 		if err != nil {
 			return err
@@ -1267,7 +1267,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetWindowMonitor, err = ffi.GetSymbol(handle, "glfwGetWindowMonitor")
 		if err != nil {
 			return err
@@ -1284,7 +1284,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwSetWindowMonitor, err = ffi.GetSymbol(handle, "glfwSetWindowMonitor")
 		if err != nil {
 			return err
@@ -1307,7 +1307,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetWindowAttrib, err = ffi.GetSymbol(handle, "glfwGetWindowAttrib")
 		if err != nil {
 			return err
@@ -1344,7 +1344,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetWindowUserPointer, err = ffi.GetSymbol(handle, "glfwSetWindowUserPointer")
 		if err != nil {
 			return err
@@ -1362,7 +1362,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetWindowUserPointer, err = ffi.GetSymbol(handle, "glfwGetWindowUserPointer")
 		if err != nil {
 			return err
@@ -1379,7 +1379,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetWindowPosCallback, err = ffi.GetSymbol(handle, "glfwSetWindowPosCallback")
 		if err != nil {
 			return err
@@ -1397,7 +1397,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSetWindowSizeCallback, err = ffi.GetSymbol(handle, "glfwSetWindowSizeCallback")
 		if err != nil {
 			return err
@@ -1415,7 +1415,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 2 && minor >= 2 {
+	if major >= 2 && minor >= 5 {
 		func_glfwSetWindowCloseCallback, err = ffi.GetSymbol(handle, "glfwSetWindowCloseCallback")
 		if err != nil {
 			return err
@@ -1433,7 +1433,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 2 && minor >= 2 {
+	if major >= 2 && minor >= 5 {
 		func_glfwSetWindowRefreshCallback, err = ffi.GetSymbol(handle, "glfwSetWindowRefreshCallback")
 		if err != nil {
 			return err
@@ -1451,7 +1451,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetWindowFocusCallback, err = ffi.GetSymbol(handle, "glfwSetWindowFocusCallback")
 		if err != nil {
 			return err
@@ -1469,7 +1469,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetWindowIconifyCallback, err = ffi.GetSymbol(handle, "glfwSetWindowIconifyCallback")
 		if err != nil {
 			return err
@@ -1505,7 +1505,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetFramebufferSizeCallback, err = ffi.GetSymbol(handle, "glfwSetFramebufferSizeCallback")
 		if err != nil {
 			return err
@@ -1541,7 +1541,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwPollEvents, err = ffi.GetSymbol(handle, "glfwPollEvents")
 		if err != nil {
 			return err
@@ -1556,7 +1556,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 2 && minor >= 2 {
+	if major >= 2 && minor >= 5 {
 		func_glfwWaitEvents, err = ffi.GetSymbol(handle, "glfwWaitEvents")
 		if err != nil {
 			return err
@@ -1571,7 +1571,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwWaitEventsTimeout, err = ffi.GetSymbol(handle, "glfwWaitEventsTimeout")
 		if err != nil {
 			return err
@@ -1588,7 +1588,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwPostEmptyEvent, err = ffi.GetSymbol(handle, "glfwPostEmptyEvent")
 		if err != nil {
 			return err
@@ -1603,7 +1603,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetInputMode, err = ffi.GetSymbol(handle, "glfwGetInputMode")
 		if err != nil {
 			return err
@@ -1621,7 +1621,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetInputMode, err = ffi.GetSymbol(handle, "glfwSetInputMode")
 		if err != nil {
 			return err
@@ -1655,7 +1655,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwGetKeyName, err = ffi.GetSymbol(handle, "glfwGetKeyName")
 		if err != nil {
 			return err
@@ -1690,7 +1690,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwGetKey, err = ffi.GetSymbol(handle, "glfwGetKey")
 		if err != nil {
 			return err
@@ -1708,7 +1708,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwGetMouseButton, err = ffi.GetSymbol(handle, "glfwGetMouseButton")
 		if err != nil {
 			return err
@@ -1726,7 +1726,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetCursorPos, err = ffi.GetSymbol(handle, "glfwGetCursorPos")
 		if err != nil {
 			return err
@@ -1745,7 +1745,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetCursorPos, err = ffi.GetSymbol(handle, "glfwSetCursorPos")
 		if err != nil {
 			return err
@@ -1764,7 +1764,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwCreateCursor, err = ffi.GetSymbol(handle, "glfwCreateCursor")
 		if err != nil {
 			return err
@@ -1783,7 +1783,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwCreateStandardCursor, err = ffi.GetSymbol(handle, "glfwCreateStandardCursor")
 		if err != nil {
 			return err
@@ -1800,7 +1800,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwDestroyCursor, err = ffi.GetSymbol(handle, "glfwDestroyCursor")
 		if err != nil {
 			return err
@@ -1817,7 +1817,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwSetCursor, err = ffi.GetSymbol(handle, "glfwSetCursor")
 		if err != nil {
 			return err
@@ -1835,7 +1835,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSetKeyCallback, err = ffi.GetSymbol(handle, "glfwSetKeyCallback")
 		if err != nil {
 			return err
@@ -1853,7 +1853,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 2 && minor >= 2 {
+	if major >= 2 && minor >= 4 {
 		func_glfwSetCharCallback, err = ffi.GetSymbol(handle, "glfwSetCharCallback")
 		if err != nil {
 			return err
@@ -1871,7 +1871,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwSetCharModsCallback, err = ffi.GetSymbol(handle, "glfwSetCharModsCallback")
 		if err != nil {
 			return err
@@ -1889,7 +1889,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSetMouseButtonCallback, err = ffi.GetSymbol(handle, "glfwSetMouseButtonCallback")
 		if err != nil {
 			return err
@@ -1907,7 +1907,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetCursorPosCallback, err = ffi.GetSymbol(handle, "glfwSetCursorPosCallback")
 		if err != nil {
 			return err
@@ -1925,7 +1925,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetCursorEnterCallback, err = ffi.GetSymbol(handle, "glfwSetCursorEnterCallback")
 		if err != nil {
 			return err
@@ -1943,7 +1943,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetScrollCallback, err = ffi.GetSymbol(handle, "glfwSetScrollCallback")
 		if err != nil {
 			return err
@@ -1961,7 +1961,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 1 {
 		func_glfwSetDropCallback, err = ffi.GetSymbol(handle, "glfwSetDropCallback")
 		if err != nil {
 			return err
@@ -1979,7 +1979,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwJoystickPresent, err = ffi.GetSymbol(handle, "glfwJoystickPresent")
 		if err != nil {
 			return err
@@ -1996,7 +1996,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetJoystickAxes, err = ffi.GetSymbol(handle, "glfwGetJoystickAxes")
 		if err != nil {
 			return err
@@ -2050,7 +2050,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetJoystickName, err = ffi.GetSymbol(handle, "glfwGetJoystickName")
 		if err != nil {
 			return err
@@ -2136,7 +2136,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwSetJoystickCallback, err = ffi.GetSymbol(handle, "glfwSetJoystickCallback")
 		if err != nil {
 			return err
@@ -2205,7 +2205,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwSetClipboardString, err = ffi.GetSymbol(handle, "glfwSetClipboardString")
 		if err != nil {
 			return err
@@ -2223,7 +2223,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetClipboardString, err = ffi.GetSymbol(handle, "glfwGetClipboardString")
 		if err != nil {
 			return err
@@ -2240,7 +2240,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwGetTime, err = ffi.GetSymbol(handle, "glfwGetTime")
 		if err != nil {
 			return err
@@ -2272,7 +2272,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwGetTimerValue, err = ffi.GetSymbol(handle, "glfwGetTimerValue")
 		if err != nil {
 			return err
@@ -2287,7 +2287,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwGetTimerFrequency, err = ffi.GetSymbol(handle, "glfwGetTimerFrequency")
 		if err != nil {
 			return err
@@ -2302,7 +2302,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwMakeContextCurrent, err = ffi.GetSymbol(handle, "glfwMakeContextCurrent")
 		if err != nil {
 			return err
@@ -2319,7 +2319,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 0 {
 		func_glfwGetCurrentContext, err = ffi.GetSymbol(handle, "glfwGetCurrentContext")
 		if err != nil {
 			return err
@@ -2334,7 +2334,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSwapBuffers, err = ffi.GetSymbol(handle, "glfwSwapBuffers")
 		if err != nil {
 			return err
@@ -2351,7 +2351,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwSwapInterval, err = ffi.GetSymbol(handle, "glfwSwapInterval")
 		if err != nil {
 			return err
@@ -2368,7 +2368,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwExtensionSupported, err = ffi.GetSymbol(handle, "glfwExtensionSupported")
 		if err != nil {
 			return err
@@ -2385,7 +2385,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 1 && minor >= 1 {
+	if major >= 1 && minor >= 0 {
 		func_glfwGetProcAddress, err = ffi.GetSymbol(handle, "glfwGetProcAddress")
 		if err != nil {
 			return err
@@ -2402,7 +2402,7 @@ func Initialise() error {
 		}
 	}
 
-	if major >= 3 && minor >= 3 {
+	if major >= 3 && minor >= 2 {
 		func_glfwVulkanSupported, err = ffi.GetSymbol(handle, "glfwVulkanSupported")
 		if err != nil {
 			return err

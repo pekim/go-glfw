@@ -162,7 +162,7 @@ func (comment *comment) setSince() {
 		if err != nil {
 			fatalOnError(err)
 		}
-		minor, err := strconv.Atoi(groups[1])
+		minor, err := strconv.Atoi(groups[2])
 		if err != nil {
 			fatalOnError(err)
 		}
