@@ -2,9 +2,16 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 
 	"github.com/pekim/glfw"
 )
+
+func init() {
+	// This is important to ensure that only a single thread makes calls to
+	// openGL apis.
+	runtime.LockOSThread()
+}
 
 func main() {
 	err := glfw.Initialise()
