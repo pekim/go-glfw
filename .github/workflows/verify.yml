@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: install dependencies
-        run: sudo apt install -y libgl-dev
+      # - name: install dependencies
+      #   run: sudo apt install -y libgl-dev
 
       - uses: actions/setup-go@v6
         with:
@@ -48,7 +48,7 @@ jobs:
         run: brew install llvm # required so that libomp.dylib is available
 
       - name: install dependencies
-        run: sudo apt install -y libgl-dev
+        run: sudo apt install -y libgl-dev libglfw3-dev
 
       - uses: actions/checkout@v6
 
