@@ -58,7 +58,7 @@ jobs:
 
       - name: test
         run: |
-          Xvfb
+          Xvfb &
           go test -v github.com/pekim/go-glfw/...
         # env:
         #   DISPLAY: ":0"
