@@ -110,12 +110,20 @@ func (functions functions) generateGoffiInit(file file) {
 		getVersion.generateGoffiPrepareCallInterface(g)
 		g.Line()
 
+		// major, minor, _ := GetVersion()
 		g.List(
 			jen.Id("major"),
 			jen.Id("minor"),
 			jen.Id("_"),
 		).Op(":=").
 			Id("GetVersion").Call()
+		// version := float64(major) + (float64(minor) / 10)
+		g.
+			Id("version").
+			Op(":=").
+			Float64().Parens(jen.Id("major")).
+			Op("+").
+			Parens(jen.Float64().Parens(jen.Id("minor")).Op("/").Lit(10))
 		g.Line()
 
 		for _, fn := range functions {
@@ -124,14 +132,14 @@ func (functions functions) generateGoffiInit(file file) {
 					continue
 				}
 
-				g.If(jen.
-					Id("major").Op(">=").Lit(fn.comment.sinceMajor).
-					Op("&&").
-					Id("minor").Op(">=").Lit(fn.comment.sinceMinor),
-				).BlockFunc(func(g *jen.Group) {
-					fn.generateGoffiGetSymbol(g)
-					fn.generateGoffiPrepareCallInterface(g)
-				})
+				since := float64(fn.comment.sinceMajor) + (float64(fn.comment.sinceMinor) / 10)
+				g.
+					// if version >= 3.4 {
+					If().Id("version").Op(">=").Lit(since).
+					BlockFunc(func(g *jen.Group) {
+						fn.generateGoffiGetSymbol(g)
+						fn.generateGoffiPrepareCallInterface(g)
+					})
 				g.Line()
 			}
 		}
