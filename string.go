@@ -8,6 +8,10 @@ func cString(str string) *byte {
 }
 
 func goString(data *byte) string {
+	if data == nil {
+		return ""
+	}
+
 	for i, b := range unsafe.Slice(data, 1024) {
 		if b == 0 {
 			return unsafe.String(data, i)
